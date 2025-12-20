@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mirna Duendes</title>
+
+    <!-- LIGAÇÃO COM O CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Mirna Duendes</h1>
+    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
+<div id="carrinho">
+    🛒 Carrinho: <span id="contador">0</span> itens
+</div>
+<button id="finalizar" onclick="finalizarCompra()">
+    Finalizar compra no WhatsApp
+</button>
+
+</header>
+
+<section class="produtos">
+
+    <div class="produto">
+        <img src="duendedasorte.jpg" alt="Duende da Sorte">
+        <h3>Duende da Sorte</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende da Sorte')">Comprar</button>
+        <button class="remover" onclick="removerProduto()">Remover</button>
+
+
+    </div>
+
+    <div class="produto">
+        <img src="duendedoamor.jpg" alt="Duende do Amor">
+        <h3>Duende do Amor</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende do Amor')">Comprar</button>
+        <button class="remover" onclick="removerProduto()">Remover</button>
+
+
+    </div>
+
+    <div class="produto">
+        <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
+        <h3>Duende Leprechaum</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende Leprechaum')">Comprar</button>
+        <button class="remover" onclick="removerProduto()">Remover</button>
+
+
+    </div>
+
+</section>
+<footer class="contato">
+    <h2>Entre em contato</h2>
+
+    <div class="botoes-contato">
+    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
+    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
+    </div>
+
+</footer>
+
+</body>
+<script src="script.js"></script>
+</html>
+
