@@ -39,3 +39,13 @@ function removerProduto() {
         alert("O carrinho já está vazio 🛒");
     }
 }
+function mostrarDescricao() {
+  const descricao = document.getElementById("descricao");
+
+  if (descricao.style.display === "none" || descricao.style.display === "") {
+    descricao.style.display = "block";
+  } else {
+    descricao.style.display = "none";
+  }
+}
+
