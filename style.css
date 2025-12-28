@@ -172,3 +172,31 @@ header p {
 .remover:hover {
     background-color: #aaa;
 }
+.produto {
+  border: 1px solid #ddd;
+  padding: 16px;
+  max-width: 300px;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.descricao {
+  display: none;
+  margin-top: 12px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btn-whats {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #25d366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
