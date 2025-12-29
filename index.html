@@ -1,12 +1,14 @@
+H<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirna Duendes</title>
+    <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>Loja dos Duendes</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
     .produtos {
       display: flex;
       flex-wrap: wrap;
@@ -18,10 +20,6 @@
       width: 220px;
       text-align: center;
       position: relative;
-    }
-    .produto img {
-      width: 150px;
-      height: auto;
     }
     .descricao {
       display: none;
@@ -41,54 +39,142 @@
     }
   </style>
 </head>
+<audio id="musica" loop>
+  <source src="floresta.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">
+  🔊
+</button>
+
 <body>
+
+<header>
+    <audio id="musica" loop>
+  <source src="floresta.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusica()" class="som">
+  🔊
+</button>
+
+    <h1>Mirna Duendes</h1>
+    <div class="som-clima">
+  <p>✨ Clique aqui e entre no clima ✨</p>
+  <button onclick="toggleMusica()" class="som-btn">
+    🔊 Som da floresta
+  </button>
+</div>
+
+    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
+<div id="carrinho">
+    🛒 Carrinho: <span id="contador">0</span> itens
+  <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
+  🗑️
+</button>
+
+</div>
+<button id="finalizar" onclick="finalizarCompra()">
+    Finalizar compra no WhatsApp
+</button>
+
+</header>
 
 <section class="produtos">
 
+  <!-- Duende da Sorte -->
   <div class="produto">
     <img src="duendedasorte.jpg" alt="Duende da Sorte">
+    <img src="duendedasorte.jpg" alt="Duende da Sorte" width="150">
     <h3>Duende da Sorte</h3>
     <p class="preco">R$ 149,90</p>
+    <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+    <div class="descricao">
+    <div class="descricao" style="display:none">
+      <p>
+        🍀 Este duende traz sorte e proteção para sua vida e seu lar.<br><br>
+        Coloque-o no seu espaço e sinta a energia positiva.
+        🍀 Este duende traz sorte e proteção para sua vida e seu lar.
+      </p>
     <button class="detalhes-btn">Ver detalhes</button>
     <div class="descricao">
       <p>🍀 Este duende traz sorte e proteção para sua vida e seu lar.</p>
       <div class="magia"></div>
+     <button onclick="levarMagia(this)">Levar essa magia pra minha casa ✨</button>
+
+      <button onclick="levarMagia(this)">Levar essa magia pra minha casa ✨</button>
       <button class="magia-btn">Levar magia pra casa ✨</button>
     </div>
   </div>
 
+  <!-- Duende do Amor -->
   <div class="produto">
     <img src="duendedoamor.jpg" alt="Duende do Amor">
+    <img src="duendedoamor.jpg" alt="Duende do Amor" width="150">
     <h3>Duende do Amor</h3>
     <p class="preco">R$ 149,90</p>
+    <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+    <div class="descricao">
+    <div class="descricao" style="display:none">
+      <p>
+        💖 Este duende ajuda a atrair amor e harmonia para relacionamentos.<br><br>
+        Deixe-o em casa e sinta o coração se abrir.
+        💖 Este duende ajuda a atrair amor e harmonia para relacionamentos.
+      </p>
     <button class="detalhes-btn">Ver detalhes</button>
     <div class="descricao">
       <p>💖 Este duende ajuda a atrair amor e harmonia para relacionamentos.</p>
       <div class="magia"></div>
+      <button onclick="levarMagia()">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this)">Levar essa magia pra minha casa ✨</button>
       <button class="magia-btn">Levar magia pra casa ✨</button>
     </div>
   </div>
 
+  <!-- Duende Leprechaum -->
   <div class="produto">
     <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
+    <img src="duendeleprechaum.jpg" alt="Duende Leprechaum" width="150">
     <h3>Duende Leprechaum</h3>
     <p class="preco">R$ 149,90</p>
+    <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+    <div class="descricao">
+    <div class="descricao" style="display:none">
+      <p>
+        🍀 O duende Leprechaum atrai fortuna e pequenos milagres para quem acredita.<br><br>
+        Coloque-o em sua casa e veja a energia mudar.
+        🍀 O duende Leprechaum atrai fortuna e pequenos milagres.
+      </p>
     <button class="detalhes-btn">Ver detalhes</button>
     <div class="descricao">
       <p>🍀 O duende Leprechaum atrai fortuna e pequenos milagres.</p>
       <div class="magia"></div>
+      <button onclick="levarMagia()">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this)">Levar essa magia pra minha casa ✨</button>
       <button class="magia-btn">Levar magia pra casa ✨</button>
     </div>
   </div>
 
+  <!-- Duende da Prosperidade -->
   <div class="produto">
     <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
+    <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade" width="150">
     <h3>Duende da Prosperidade</h3>
     <p class="preco">R$ 149,90</p>
+    <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+    <div class="descricao" style="display:none">
+      <p>
+        ✨ Este duende atrai prosperidade e boas oportunidades para sua casa.
+      </p>
     <button class="detalhes-btn">Ver detalhes</button>
     <div class="descricao">
       <p>✨ Este duende atrai prosperidade e boas oportunidades para sua casa.</p>
       <div class="magia"></div>
+      <button onclick="levarMagia(this)">Levar essa magia pra minha casa ✨</button>
       <button class="magia-btn">Levar magia pra casa ✨</button>
     </div>
   </div>
@@ -118,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Adiciona ao carrinho
       comprarProduto(nomeProduto);
 
-      // Toca som (adicione um arquivo magia.mp3 na mesma pasta)
+      // Toca som (adicione um arquivo magia.mp3 na pasta)
       const audio = new Audio("magia.mp3");
       audio.play();
 
@@ -149,5 +235,18 @@ function mostrarEstrelinhas(produto) {
 }
 </script>
 
+
+</section>
+<footer class="contato">
+    <h2>Entre em contato</h2>
+
+    <div class="botoes-contato">
+    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
+    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
