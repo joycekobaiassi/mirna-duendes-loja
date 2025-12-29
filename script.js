@@ -86,8 +86,15 @@ function ativarMagia() {
     }, 1200);
   }
 }
+function levarMagia() {
+  ativarMagia();
 
+  setTimeout(() => {
+    const mensagem =
+      "Olá! Me encantei pelo Duende da Prosperidade ✨ Gostaria de levar essa magia para minha casa.";
+    const telefone = "5548992126571";
+    const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
-
-
-
+    window.open(url, "_blank");
+  }, 1000);
+}
