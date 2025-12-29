@@ -238,6 +238,22 @@ footer h2 {
 .som:hover {
   opacity: 1;
 }
+.som {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 999;
+}
+
+.som:hover {
+  opacity: 1;
+}
+
 
 
 
