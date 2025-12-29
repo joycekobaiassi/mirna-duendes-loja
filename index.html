@@ -14,6 +14,10 @@
     <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
 <div id="carrinho">
     🛒 Carrinho: <span id="contador">0</span> itens
+    <button onclick="esvaziarCarrinho()" class="esvaziar">
+  Esvaziar carrinho 🗑️
+</button>
+
 </div>
 <button id="finalizar" onclick="finalizarCompra()">
     Finalizar compra no WhatsApp
@@ -28,8 +32,7 @@
         <h3>Duende da Sorte</h3>
         <p class="preco">R$ 149,90</p>
         <button onclick="comprarProduto(this, 'Duende da Sorte')">Comprar</button>
-        <button class="remover" onclick="removerProduto()">Remover</button>
-
+      
 
     </div>
 
@@ -38,14 +41,14 @@
         <h3>Duende do Amor</h3>
         <p class="preco">R$ 149,90</p>
         <button onclick="comprarProduto(this, 'Duende do Amor')">Comprar</button>
-        <button class="remover" onclick="removerProduto()">Remover</button>
+       
     </div>
 <div class="produto">
     <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
     <h3>Duende Leprechaum</h3>
     <p class="preco">R$ 149,90</p>
     <button onclick="comprarProduto(this, 'Duende Leprechaum')">Comprar</button>
-    <button class="remover" onclick="removerProduto()">Remover</button>
+  
 </div>
 
 <div class="produto">
@@ -88,4 +91,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
