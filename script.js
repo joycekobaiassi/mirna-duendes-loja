@@ -1,5 +1,3 @@
-alert("JS carregou");
-
 let contador = 0;
 
 function comprarProduto(botao, nome) {
@@ -53,4 +51,5 @@ function ativarMagia() {
     setTimeout(() => estrela.remove(), 1200);
   }
 }
+
 
