@@ -1,13 +1,11 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url("floresta.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: var(--bege);
   color: var(--marrom);
   font-size: 16px;
 }
+
 
 :root {
   --verde: #2f5d50;
@@ -397,5 +395,6 @@ header p {
     0 2px 6px rgba(0,0,0,0.6),
     0 0 12px rgba(122, 61, 240, 0.6);
 }
+
 
 
