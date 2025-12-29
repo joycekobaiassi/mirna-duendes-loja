@@ -55,6 +55,16 @@ function esvaziarCarrinho() {
   contador = 0;
   document.getElementById("contador").innerText = contador;
 }
+function toggleMusica() {
+  const musica = document.getElementById("musica");
+
+  if (musica.paused) {
+    musica.play();
+  } else {
+    musica.pause();
+  }
+}
+
 
 
 
