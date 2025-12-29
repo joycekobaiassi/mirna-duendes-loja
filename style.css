@@ -8,8 +8,7 @@
 
 /* ===== BODY ===== */
 body {
-  background: #f4f2f8;
-  color: #333;
+  font-size: 16px;
 }
 
 /* ===== HEADER ===== */
@@ -225,6 +224,7 @@ footer h2 {
     font-size: 24px;
   }
 }
+
 
 
 
