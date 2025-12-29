@@ -1,13 +1,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-
   background-image: url("floresta.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  color: #2f1f14;
+  color: var(--marrom);
+  font-size: 16px;
 }
 
 :root {
@@ -339,6 +338,7 @@ body {
     padding: 12px;
   }
 }
+
 
 
 
