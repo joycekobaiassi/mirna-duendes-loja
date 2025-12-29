@@ -13,7 +13,15 @@
 <button onclick="toggleMusica()" class="som" title="Ativar som ambiente">
   🔊
 </button>
-
+function mostrarDescricao(id) {
+  // Esconde todas as descrições primeiro
+  document.querySelectorAll('.descricao').forEach(el => el.style.display = 'none');
+  // Mostra apenas a que você clicou
+  const item = document.getElementById(id);
+  if (item) {
+    item.style.display = 'block';
+  }
+}
 <body>
 
 <header>
@@ -115,6 +123,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
