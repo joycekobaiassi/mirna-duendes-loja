@@ -42,10 +42,11 @@ header::before {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(122, 61, 240, 0.75),
-    rgba(47, 93, 80, 0.75)
+    rgba(80, 40, 140, 0.55),
+    rgba(40, 90, 70, 0.55)
   );
 }
+
 
 
 header h1 {
@@ -393,6 +394,21 @@ header p {
     0 2px 6px rgba(0,0,0,0.6),
     0 0 12px rgba(122, 61, 240, 0.6);
 }
+header h1 {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow:
+    0 3px 8px rgba(0,0,0,0.7),
+    0 0 15px rgba(212,175,55,0.8);
+}
+
+header p,
+header span,
+header button {
+  color: #f7f3ee;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
 
 
 
