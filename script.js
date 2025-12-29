@@ -116,5 +116,42 @@ function levarMagia(botao) {
   // Aqui você pode chamar função das estrelinhas
   mostrarEstrelinhas(produto);
 }
+// Mostrar / esconder descrição do produto clicado
+function mostrarDescricao(botao) {
+  const produto = botao.parentElement;
+  const descricao = produto.querySelector(".descricao");
+  descricao.style.display = descricao.style.display === "block" ? "none" : "block";
+}
+
+// Função para adicionar ao carrinho (simulando)
+function comprarProduto(botao, nomeProduto) {
+  console.log(`Produto adicionado ao carrinho: ${nomeProduto}`);
+  // Aqui você coloca a lógica real do seu carrinho
+}
+
+// Função de magia
+function levarMagia(botao) {
+  const produto = botao.closest(".produto");
+  const nomeProduto = produto.querySelector("h3").innerText;
+
+  // Adiciona ao carrinho
+  comprarProduto(botao, nomeProduto);
+
+  // Mostra alerta
+  alert(`✨ Magia do "${nomeProduto}" levada para sua casa! ✨`);
+
+  // Mostra estrelinhas
+  mostrarEstrelinhas(produto);
+}
+
+// Função para mostrar estrelinhas
+function mostrarEstrelinhas(produto) {
+  const magiaDiv = produto.querySelector(".magia");
+  magiaDiv.innerHTML = ""; // limpa antes
+  for (let i = 0; i < 5; i++) {
+    const estrela = document.createElement("span");
+    estrela.innerText = "⭐";
+    magiaDiv.appendChil
+
 
 
