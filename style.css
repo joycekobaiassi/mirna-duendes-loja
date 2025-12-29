@@ -59,12 +59,17 @@ header p {
 
 /* ===== CARRINHO ===== */
 #carrinho {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
   background: white;
-  padding: 10px 14px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 999px;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   color: var(--verde-escuro);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 #carrinho button,
@@ -338,6 +343,7 @@ footer h2 {
     padding: 12px;
   }
 }
+
 
 
 
