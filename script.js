@@ -25,10 +25,16 @@ function finalizarCompra() {
   window.open(url, "_blank");
 }
 
-function mostrarDescricao() {
-  const descricao = document.getElementById("descricao");
-  descricao.style.display =
-    descricao.style.display === "block" ? "none" : "block";
+function mostrarDescricao(idDesejado) {
+  // Isso fecha qualquer descrição que esteja aberta antes de abrir a nova
+  const todas = document.querySelectorAll('.descricao');
+  todas.forEach(d => d.style.display = 'none');
+
+  // Isso abre especificamente a que você clicou
+  const alvo = document.getElementById(idDesejado);
+  if (alvo) {
+    alvo.style.display = 'block';
+  }
 }
 
 /* ✅ ESTA É A FUNÇÃO QUE FALTAVA */
@@ -73,6 +79,7 @@ function toggleMusica() {
     musica.pause();
   }
 }
+
 
 
 
