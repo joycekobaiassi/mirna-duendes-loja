@@ -1,3 +1,5 @@
+alert("JS carregou");
+
 let contador = 0;
 
 function comprarProduto(botao, nome) {
@@ -82,6 +84,7 @@ function ativarMagia() {
     }, 1200);
   }
 }
+
 
 
 
