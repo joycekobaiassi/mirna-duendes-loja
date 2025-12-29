@@ -200,3 +200,14 @@ header p {
   padding: 8px 12px;
   border-radius: 6px;
 }
+.btn-magia {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #7a5cff; /* depois a gente ajusta cor */
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
