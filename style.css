@@ -300,6 +300,19 @@ body {
   background-color: var(--bege);
   color: var(--marrom);
 }
+.som-floresta {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: var(--verde);
+  cursor: pointer;
+}
+
+.som-floresta span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--dourado);
+}
+
 
 
 
