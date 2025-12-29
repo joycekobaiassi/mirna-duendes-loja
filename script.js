@@ -64,6 +64,16 @@ function toggleMusica() {
     musica.pause();
   }
 }
+function toggleMusica() {
+  const musica = document.getElementById("musica");
+
+  if (musica.paused) {
+    musica.play();
+  } else {
+    musica.pause();
+  }
+}
+
 
 
 
