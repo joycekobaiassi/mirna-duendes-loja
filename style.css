@@ -231,3 +231,25 @@ header p {
     transform: translateY(-60px);
   }
 }
+#magia {
+  position: relative;
+  height: 30px;
+}
+
+.estrela {
+  position: absolute;
+  font-size: 18px;
+  animation: subir 1.2s ease-out forwards;
+}
+
+@keyframes subir {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
