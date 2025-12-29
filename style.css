@@ -445,5 +445,13 @@ header h1 {
     0 0 8px rgba(100, 180, 140, 0.6),
     0 0 15px rgba(100, 180, 140, 0.4);
 }
+.subtitulo-magico {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b8f7a;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
 
 
