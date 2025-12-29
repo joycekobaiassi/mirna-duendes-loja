@@ -51,5 +51,10 @@ function ativarMagia() {
     setTimeout(() => estrela.remove(), 1200);
   }
 }
+function esvaziarCarrinho() {
+  contador = 0;
+  document.getElementById("contador").innerText = contador;
+}
+
 
 
