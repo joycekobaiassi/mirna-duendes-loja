@@ -28,9 +28,18 @@ header {
 }
 
 header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 2.6rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.3rem;
 }
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+}
+
 
 header p {
   font-size: 16px;
@@ -291,6 +300,7 @@ body {
   background-color: var(--bege);
   color: var(--marrom);
 }
+
 
 
 
