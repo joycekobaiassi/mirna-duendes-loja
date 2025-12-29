@@ -40,6 +40,17 @@ header {
   text-align: center;
   padding: 30px 15px;
 }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(122, 61, 240, 0.6),
+    rgba(169, 140, 255, 0.6)
+  );
+  z-index: 0;
+}
 
 
 header h1 {
@@ -375,24 +386,9 @@ footer h2 {
     padding: 12px;
   }
 }
+Adicione:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+header * {
+  position: relative;
+  z-index: 1;
+}
