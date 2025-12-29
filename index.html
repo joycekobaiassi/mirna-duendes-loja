@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirna Duendes</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirna Duendes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <audio id="musica" loop>
-  <source src="floresta.mp3" type="audio/mpeg">
+  <source src="floresta.mp3" type="audio/mpeg">
 </audio>
 
 <button onclick="toggleMusica()" class="som" title="Ativar som ambiente">
-  🔊
+  🔊
 </button>
 
 <body>
 
 <header>
-    <audio id="musica" loop>
-  <source src="floresta.mp3" type="audio/mpeg">
+    <audio id="musica" loop>
+  <source src="floresta.mp3" type="audio/mpeg">
 </audio>
 
 <button onclick="toggleMusica()" class="som">
-  🔊
+  🔊
 </button>
 
-    <h1>Mirna Duendes</h1>
-    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
+    <h1>Mirna Duendes</h1>
+    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
 <div id="carrinho">
-    🛒 Carrinho: <span id="contador">0</span> itens
-  <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
-  🗑️
+    🛒 Carrinho: <span id="contador">0</span> itens
+  <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
+  🗑️
 </button>
 
 </div>
 <button id="finalizar" onclick="finalizarCompra()">
-    Finalizar compra no WhatsApp
+    Finalizar compra no WhatsApp
 </button>
 
 </header>
 
 <section class="produtos">
 
-    <section class="produtos">
+    <div class="produto">
+        <img src="duendedasorte.jpg" alt="Duende da Sorte">
+        <h3>Duende da Sorte</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende da Sorte')">Comprar</button>
 
-    <div class="produto">
-        <img src="duendedasorte.jpg" alt="Duende da Sorte">
-        <h3>Duende da Sorte</h3>
-        <p class="preco">R$ 149,90</p>
-        <button onclick="mostrarDescricao('desc-sorte')">Ver detalhes</button>
-        
-        <div id="desc-sorte" class="descricao" style="display:none;">
-            <p>
-                ✨ Sou o brilho da oportunidade que cruza o seu caminho. Comigo no seu lar, o inesperado se torna positivo e as portas se abrem.
-            </p>
-            <button onclick="comprarProduto(this, 'Duende da Sorte')">Levar essa magia pra minha casa ✨</button>
-        </div>
-    </div>
 
-    <div class="produto">
-        <img src="duendedoamor.jpg" alt="Duende do Amor">
-        <h3>Duende do Amor</h3>
-        <p class="preco">R$ 149,90</p>
-        <button onclick="mostrarDescricao('desc-amor')">Ver detalhes</button>
+    </div>
 
-        <div id="desc-amor" class="descricao" style="display:none;">
-            <p>
-                ✨ Sou o guardião do afeto. Minha missão é suavizar os corações e atrair a harmonia e a doçura para as suas relações.
-            </p>
-            <button onclick="comprarProduto(this, 'Duende do Amor')">Levar essa magia pra minha casa ✨</button>
-        </div>
-    </div>
+    <div class="produto">
+        <img src="duendedoamor.jpg" alt="Duende do Amor">
+        <h3>Duende do Amor</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende do Amor')">Comprar</button>
 
-    <div class="produto">
-        <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
-        <h3>Duende Leprechaum</h3>
-        <p class="preco">R$ 149,90</p>
-        <button onclick="mostrarDescricao('desc-leprechaum')">Ver detalhes</button>
+    </div>
+<div class="produto">
+    <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
+    <h3>Duende Leprechaum</h3>
+    <p class="preco">R$ 149,90</p>
+    <button onclick="comprarProduto(this, 'Duende Leprechaum')">Comprar</button>
 
-        <div id="desc-leprechaum" class="descricao" style="display:none;">
-            <p>
-                ✨ Sou o segredo da fartura e a proteção da terra. Bloqueio as energias ruins e garanto que a alegria faça morada aqui.
-            </p>
-            <button onclick="comprarProduto(this, 'Duende Leprechaum')">Levar essa magia pra minha casa ✨</button>
-        </div>
-    </div>
+</div>
 
-    <div class="produto">
-        <img src="duendedaprosperidade.jpg" alt="Duende da Prosperidade">
-        <h3>Duende da Prosperidade</h3>
-        <p class="preco">R$ 149,90</p>
-        <button onclick="mostrarDescricao('desc-prosperidade')">Ver detalhes</button>
+<div class="produto">
+  <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
 
-        <div id="desc-prosperidade" class="descricao" style="display:none;">
-            <p>
-                ✨ Sou o guardião dos pequenos milagres e o sussurro da fartura. Destravo os fluxos da sua vida e atraio a abundância.
-            </p>
-            <button onclick="comprarProduto(this, 'Duende da Prosperidade')">Levar essa magia pra minha casa ✨</button>
-        </div>
-    </div>
+  <h3>Duende da Prosperidade</h3>
 
-</section>
+<button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+
+  <div id="descricao" class="descricao">
+    <p>
+      ✨ Este duende tem a missão de atrair prosperidade, harmonia e boas
+      oportunidades para sua casa e sua família.
+      <br><br>
+      Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.
+    </p>
+
+    <div id="magia"></div>
+
+    <button onclick="levarMagia()">
+      Levar essa magia pra minha casa ✨
+    </button>
+  </div>
+</div>
+
+
+
 </section>
 <footer class="contato">
-    <h2>Entre em contato</h2>
+    <h2>Entre em contato</h2>
 
-    <div class="botoes-contato">
-    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
-    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
-    </div>
+    <div class="botoes-contato">
+    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
+    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
+    </div>
 
 </footer>
 
@@ -116,18 +107,4 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ESSE É O CODIGO, GOSTARIA DE COLOCAR TODOS IGUAIS AO DUENDE DA PROSPERIDADE
