@@ -32,11 +32,15 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(135deg, #7a3df0, #a98cff);
+  position: relative;
+  background-image: url("floresta.jpg");
+  background-size: cover;
+  background-position: center;
   color: #fff;
   text-align: center;
-  padding: 25px 15px;
+  padding: 30px 15px;
 }
+
 
 header h1 {
   font-size: 2.6rem;
@@ -371,6 +375,7 @@ footer h2 {
     padding: 12px;
   }
 }
+
 
 
 
