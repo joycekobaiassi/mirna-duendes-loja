@@ -31,24 +31,22 @@ body {
 /* ===== HEADER ===== */
 header {
   position: relative;
-  background-image: url("floresta.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("floresta.jpg") center / cover no-repeat;
   color: #fff;
   text-align: center;
-  padding: 30px 15px;
+  padding: 60px 20px;
 }
+
 header::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(122, 61, 240, 0.6),
-    rgba(169, 140, 255, 0.6)
+    rgba(122, 61, 240, 0.75),
+    rgba(47, 93, 80, 0.75)
   );
-  z-index: 0;
 }
+
 
 header h1 {
   font-weight: 800;
@@ -395,6 +393,7 @@ header p {
     0 2px 6px rgba(0,0,0,0.6),
     0 0 12px rgba(122, 61, 240, 0.6);
 }
+
 
 
 
