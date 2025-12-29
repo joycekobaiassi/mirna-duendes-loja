@@ -285,6 +285,13 @@ footer h2 {
 .som-btn:hover {
   opacity: 1;
 }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bege);
+  color: var(--marrom);
+}
+
 
 
 
