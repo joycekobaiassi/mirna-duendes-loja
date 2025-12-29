@@ -41,8 +41,9 @@ function removerProduto() {
         alert("O carrinho já está vazio 🛒");
     }
 }
-function mostrarDescricao() {
-  const descricao = document.getElementById("descricao");
+function mostrarDescricao(botao) {
+  const produto = botao.closest(".produto");
+  const descricao = produto.querySelector(".descricao");
 
   if (descricao.style.display === "none" || descricao.style.display === "") {
     descricao.style.display = "block";
@@ -50,6 +51,7 @@ function mostrarDescricao() {
     descricao.style.display = "none";
   }
 }
+
 function ativarMagia() {
   const magia = document.getElementById("magia");
 
@@ -84,6 +86,7 @@ function ativarMagia() {
     }, 1200);
   }
 }
+
 
 
 
