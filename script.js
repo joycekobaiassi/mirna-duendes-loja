@@ -93,4 +93,28 @@ function mostrarDescricao(botao) {
 function levarMagia() {
   alert("✨ Magia levada para sua casa! ✨");
 }
+function mostrarEstrelinhas(produto) {
+  const magiaDiv = produto.querySelector(".magia");
+
+  for (let i = 0; i < 5; i++) {
+    const estrela = document.createElement("span");
+    estrela.innerText = "⭐";
+    magiaDiv.appendChild(estrela);
+  }
+}
+function levarMagia(botao) {
+  // Pega o produto pai
+  const produto = botao.closest(".produto");
+  const nomeProduto = produto.querySelector("h3").innerText;
+
+  // Adiciona ao carrinho
+  comprarProduto(botao, nomeProduto);
+
+  // Mostra a notificação
+  alert("✨ Magia levada para sua casa! ✨");
+
+  // Aqui você pode chamar função das estrelinhas
+  mostrarEstrelinhas(produto);
+}
+
 
