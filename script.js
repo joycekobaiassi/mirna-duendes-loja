@@ -1,5 +1,3 @@
-alert("JS carregou");
-
 let contador = 0;
 
 function comprarProduto(botao, nome) {
@@ -82,4 +80,5 @@ function levarMagia() {
     window.open(url, "_blank");
   }, 1000);
 }
+
 
