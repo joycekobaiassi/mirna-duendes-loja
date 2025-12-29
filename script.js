@@ -73,3 +73,24 @@ function toggleMusica() {
     musica.pause();
   }
 }
+// Mostrar / esconder descrição do produto clicado
+function mostrarDescricao(botao) {
+  // Pega o produto pai do botão
+  const produto = botao.parentElement;
+
+  // Pega a div de descrição dentro deste produto
+  const descricao = produto.querySelector(".descricao");
+
+  // Alterna visibilidade
+  if (descricao.style.display === "block") {
+    descricao.style.display = "none";
+  } else {
+    descricao.style.display = "block";
+  }
+}
+
+// Função de "levar magia"
+function levarMagia() {
+  alert("✨ Magia levada para sua casa! ✨");
+}
+
