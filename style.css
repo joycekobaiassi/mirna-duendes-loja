@@ -61,16 +61,44 @@ header p {
 #carrinho {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 
-  background: white;
-  padding: 6px 12px;
+  background: #fff;
+  padding: 4px 10px;
   border-radius: 999px;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
   color: var(--verde-escuro);
-  font-size: 0.9rem;
 }
+
+/* texto */
+#carrinho span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* contador */
+#contador {
+  font-weight: bold;
+  margin: 0 2px;
+}
+
+/* lixeira */
+#carrinho .lixeira {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 
 #carrinho button,
 #carrinho .lixeira {
@@ -343,6 +371,7 @@ footer h2 {
     padding: 12px;
   }
 }
+
 
 
 
