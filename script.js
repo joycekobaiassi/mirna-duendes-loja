@@ -1,88 +1,287 @@
-let contador = 0;
-
-function comprarProduto(botao, nome) {
-  contador++;
-  document.getElementById("contador").innerText = contador;
+:root {
+  --verde: #2f5d50;
+  --verde-escuro: #1f3f36;
+  --dourado: #d4af37;
+  --bege: #f7f3ee;
+  --marrom: #4a3b2c;
 }
 
-function removerProduto() {
-  if (contador > 0) {
-    contador--;
-    document.getElementById("contador").innerText = contador;
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  font-size: 16px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, #7a3df0, #a98cff);
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* ===== CARRINHO ===== */
+#carrinho {
+  background: #fff;
+  color: #333;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* ===== BOTÃO FINALIZAR ===== */
+#finalizar {
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ffdd57;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#finalizar:hover {
+  opacity: 0.9;
+}
+
+/* ===== PRODUTOS ===== */
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 30px 15px;
+}
+
+/* ===== CARD PRODUTO ===== */
+.produto {
+  background: #fff;
+  width: 260px;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* ===== IMAGEM ===== */
+.produto img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== TÍTULO ===== */
+.produto h3 {
+  margin: 10px 0;
+}
+
+/* ===== PREÇO ===== */
+.preco {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ===== BOTÕES ===== */
+.produto button {
+  margin-top: 8px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #7a3df0;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.produto button:hover {
+  opacity: 0.9;
+}
+
+.remover {
+  background: #e53935;
+}
+
+/* ===== DESCRIÇÃO ===== */
+.descricao {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* ===== MAGIA ===== */
+#magia {
+  position: relative;
+  height: 40px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+/* ===== ESTRELINHAS ===== */
+.estrela {
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  animation: subir 1.2s ease-out forwards;
+}
+
+@keyframes subir {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
   }
 }
 
-function finalizarCompra() {
-  if (contador === 0) {
-    alert("Seu carrinho está vazio 🛒");
-    return;
+/* ===== FOOTER ===== */
+footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+}
+
+.botoes-contato a {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 15px;
+  background: #7a3df0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 26px;
   }
 
-  const mensagem = `Olá! Gostaria de finalizar a compra de ${contador} produto(s) da Mirna Duendes ✨`;
-  const telefone = "5548992126571";
-  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+  .produtos {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
 
-  window.open(url, "_blank");
-}
+  .produto {
+    width: 100%;
+    max-width: 320px;
+  }
 
-function mostrarDescricao(id) {
-    // Esconde todas as descrições primeiro para não virar bagunça
-    const todas = document.querySelectorAll('.descricao');
-    todas.forEach(d => d.style.display = 'none');
-
-    // Mostra apenas a que você clicou agora
-    const alvo = document.getElementById(id);
-    if (alvo) {
-        alvo.style.display = 'block';
-    }
-}
-
-/* ✅ ESTA É A FUNÇÃO QUE FALTAVA */
-function levarMagia() {
-  ativarMagia();
-  comprarProduto(null, "Duende da Prosperidade");
-}
-
-function ativarMagia() {
-  const magia = document.getElementById("magia");
-
-  for (let i = 0; i < 6; i++) {
-    const estrela = document.createElement("span");
-    estrela.className = "estrela";
-    estrela.innerText = "✨";
-    estrela.style.left = Math.random() * 120 + "px";
-
-    magia.appendChild(estrela);
-
-    setTimeout(() => estrela.remove(), 1200);
+  .produto button {
+    font-size: 18px;
+    padding: 14px;
   }
 }
-function esvaziarCarrinho() {
-  contador = 0;
-  document.getElementById("contador").innerText = contador;
+.esvaziar {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 8px;
+  font-size: 14px;
 }
-function toggleMusica() {
-  const musica = document.getElementById("musica");
 
-  if (musica.paused) {
-    musica.play();
-  } else {
-    musica.pause();
+.esvaziar:hover {
+  background: rgba(255,255,255,0.2);
+}
+.lixeira {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.lixeira:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+@media (min-width: 769px) {
+  .lixeira {
+    font-size: 24px;
   }
 }
-function toggleMusica() {
-  const musica = document.getElementById("musica");
-
-  if (musica.paused) {
-    musica.play();
-  } else {
-    musica.pause();
-  }
+.som {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  opacity: 0.6;
 }
 
+.som:hover {
+  opacity: 1;
+}
+.som {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 999;
+}
 
+.som:hover {
+  opacity: 1;
+}
+.som-clima {
+  margin-top: 12px;
+  text-align: center;
+}
 
+.som-clima p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
 
+.som-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.85;
+}
 
-
-
+.som-btn:hover {
+  opacity: 1;
+}
