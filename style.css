@@ -41,13 +41,8 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(80, 40, 140, 0.55),
-    rgba(40, 90, 70, 0.55)
-  );
+  background: rgba(0, 0, 0, 0.25);
 }
-
-
 
 header h1 {
   font-weight: 800;
@@ -405,9 +400,34 @@ header h1 {
 header p,
 header span,
 header button {
-  color: #f7f3ee;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4);
 }
+
+header h1 {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.9),
+    0 0 12px rgba(255,255,255,0.4);
+}
+
+header p {
+  color: #fdfbf7;
+  font-weight: 500;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+header button,
+header .som-btn,
+header .som-floresta {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
 
 
 
