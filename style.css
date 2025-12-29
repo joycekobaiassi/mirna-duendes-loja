@@ -1,8 +1,11 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: var(--bege);
-  color: var(--marrom);
+  background-image: url("floresta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #2f1f14;
   font-size: 16px;
 }
 
@@ -24,24 +27,13 @@ body {
 }
 
 /* ===== BODY ===== */
-body {
-  font-size: 16px;
-}
 
 /* ===== HEADER ===== */
 header {
   position: relative;
-  background: url("floresta.jpg") center / cover no-repeat;
+  background: transparent;
   text-align: center;
-  padding: 70px 20px;
-  color: #fff;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  padding: 60px 20px;
 }
 
 header h1 {
@@ -427,6 +419,7 @@ header .som-floresta {
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
+
 
 
 
