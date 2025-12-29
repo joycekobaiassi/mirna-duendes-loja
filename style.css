@@ -196,4 +196,16 @@ footer h2 {
     padding: 14px;
   }
 }
+.esvaziar {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.esvaziar:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 
