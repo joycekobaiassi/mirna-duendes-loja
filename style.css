@@ -48,14 +48,22 @@ header p {
 
 /* ===== CARRINHO ===== */
 #carrinho {
-  background: #fff;
-  color: #333;
-  display: inline-block;
-  padding: 8px 15px;
+  background: white;
+  padding: 10px 14px;
   border-radius: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: var(--verde-escuro);
+  font-size: 0.95rem;
 }
+
+#carrinho button,
+#carrinho .lixeira {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 
 /* ===== BOTÃO FINALIZAR ===== */
 #finalizar {
@@ -85,13 +93,10 @@ header p {
 
 /* ===== CARD PRODUTO ===== */
 .produto {
-  background: #fff;
-  width: 260px;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  position: relative;
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 /* ===== IMAGEM ===== */
@@ -312,6 +317,17 @@ body {
   font-size: 0.8rem;
   color: var(--dourado);
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .produto button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
 
 
 
