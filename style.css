@@ -108,7 +108,10 @@ header p {
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+
+  width: 260px;
 }
+
 
 /* ===== IMAGEM ===== */
 .produto img {
@@ -333,6 +336,7 @@ footer h2 {
     padding: 12px;
   }
 }
+
 
 
 
