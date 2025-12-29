@@ -65,5 +65,23 @@ function ativarMagia() {
     }, 1200);
   }
 }
+function ativarMagia() {
+  const magia = document.getElementById("magia");
+
+  for (let i = 0; i < 6; i++) {
+    const estrela = document.createElement("span");
+    estrela.classList.add("estrela");
+    estrela.innerText = "✨";
+
+    estrela.style.left = Math.random() * 120 + "px";
+
+    magia.appendChild(estrela);
+
+    setTimeout(() => {
+      estrela.remove();
+    }, 1200);
+  }
+}
+
 
 
