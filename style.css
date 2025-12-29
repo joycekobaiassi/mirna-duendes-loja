@@ -434,4 +434,16 @@ header .som-floresta {
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
+header h1 {
+  font-size: 3.2rem;
+  color: #2f5e4e; /* verde místico */
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+
+  text-shadow:
+    0 0 8px rgba(100, 180, 140, 0.6),
+    0 0 15px rgba(100, 180, 140, 0.4);
+}
+
 
