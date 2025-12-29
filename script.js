@@ -152,6 +152,3 @@ function mostrarEstrelinhas(produto) {
     const estrela = document.createElement("span");
     estrela.innerText = "⭐";
     magiaDiv.appendChil
-
-
-
