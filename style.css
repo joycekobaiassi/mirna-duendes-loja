@@ -310,12 +310,7 @@ footer h2 {
 .som-btn:hover {
   opacity: 1;
 }
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bege);
-  color: var(--marrom);
-}
+
 .som-floresta {
   margin: 10px 0;
   font-size: 0.95rem;
@@ -338,6 +333,7 @@ body {
     padding: 12px;
   }
 }
+
 
 
 
