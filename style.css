@@ -253,6 +253,31 @@ footer h2 {
 .som:hover {
   opacity: 1;
 }
+.som-clima {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.som-clima p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.som-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.som-btn:hover {
+  opacity: 1;
+}
+
 
 
 
