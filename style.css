@@ -210,4 +210,24 @@ header p {
   text-decoration: none;
   font-weight: 500;
 }
+#magia {
+  position: relative;
+  height: 0;
+}
 
+.estrela {
+  position: absolute;
+  font-size: 20px;
+  animation: flutuar 1.2s ease-out forwards;
+}
+
+@keyframes flutuar {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
