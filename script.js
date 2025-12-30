@@ -76,4 +76,26 @@ function toggleMusica() {
     musica.pause();
   }
 }
+function levarMagia(botao, nomeProduto) {
+    const produto = botao.closest('.produto');
+
+    // Adiciona ao carrinho
+    const contador = document.getElementById('contador');
+    contador.innerText = parseInt(contador.innerText) + 1;
+
+    // Mostra estrelinhas animadas
+    const magiaDiv = produto.querySelector('.magia');
+    magiaDiv.innerHTML = '';
+
+    for (let i = 0; i < 5; i++) {
+        const estrela = document.createElement('span');
+        estrela.innerText = '⭐';
+        estrela.style.opacity = 0;
+        estrela.style.transition = 'opacity 0.5s ease ' + (i * 0.1) + 's';
+        magiaDiv.appendChild(estrela);
+        // Forçar animação
+        setTimeout(() => { estrela.style.opacity = 1; }, 50);
+    }
+}
+
 
