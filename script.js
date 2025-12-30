@@ -37,20 +37,23 @@ function levarMagia() {
   comprarProduto(null, "Duende da Prosperidade");
 }
 
-function ativarMagia() {
-  const magia = document.getElementById("magia");
+function levarMagia(botao, nomeProduto) {
+  const produto = botao.closest(".produto");
+  const magia = produto.querySelector(".magia");
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     const estrela = document.createElement("span");
-    estrela.className = "estrela";
-    estrela.innerText = "✨";
-    estrela.style.left = Math.random() * 120 + "px";
-
+    estrela.classList.add("estrela");
+    estrela.textContent = "✨";
+    estrela.style.left = Math.random() * 100 + "%";
     magia.appendChild(estrela);
 
     setTimeout(() => estrela.remove(), 1200);
   }
+
+  adicionarAoCarrinho(nomeProduto);
 }
+
 function esvaziarCarrinho() {
   contador = 0;
   document.getElementById("contador").innerText = contador;
@@ -73,3 +76,4 @@ function toggleMusica() {
     musica.pause();
   }
 }
+
