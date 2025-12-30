@@ -59,3 +59,11 @@ function toggleMusica() {
     musica.pause();
   }
 }
+function mostrarDescricao(botao) {
+  const produto = botao.closest('.produto');
+  const descricao = produto.querySelector('.descricao');
+
+  // Alterna a classe 'aberta'
+  descricao.classList.toggle('aberta');
+}
+
