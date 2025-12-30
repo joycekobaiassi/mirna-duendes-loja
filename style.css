@@ -434,3 +434,18 @@ header .som-floresta {
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
+.descricao {
+  max-height: 0;            /* comece fechado */
+  overflow: hidden;         /* esconde conteúdo extra */
+  margin-top: 0;
+  border-top: 1px dashed #ccc;
+  padding: 0 0;
+  transition: max-height 0.4s ease, padding 0.4s ease, margin-top 0.4s ease;
+}
+
+.descricao.aberta {
+  max-height: 500px;        /* altura suficiente para o conteúdo */
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
