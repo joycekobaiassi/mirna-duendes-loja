@@ -5,156 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirna Duendes</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .produtos { display: flex; flex-wrap: wrap; gap: 20px; }
+        .produto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 220px;
+            text-align: center;
+            position: relative;
+        }
+        .produto img { width: 150px; height: auto; }
+        .descricao { display: none; margin-top: 10px; border-top: 1px dashed #ccc; padding-top: 10px; }
+        .magia span { color: gold; font-size: 20px; margin: 0 2px; }
+        button { margin-top: 5px; padding: 5px 10px; cursor: pointer; }
+    </style>
 </head>
+<body>
+
+<!-- Som ambiente -->
 <audio id="musica" loop>
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">
-  🔊
-</button>
-
-<body>
+<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">🔊</button>
 
 <header>
-    <audio id="musica" loop>
-  <source src="floresta.mp3" type="audio/mpeg">
-</audio>
-
     <h1>Mirna Duendes</h1>
     <div class="som-clima">
-  <p>✨ Clique aqui e entre no clima ✨</p>
-  <button onclick="toggleMusica()" class="som-btn">
-    🔊 Som da floresta
-  </button>
-</div>
-
+      <p>✨ Clique aqui e entre no clima ✨</p>
+      <button onclick="toggleMusica()" class="som-btn">🔊 Som da floresta</button>
+    </div>
     <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
-<div id="carrinho">
-    🛒 Carrinho: <span id="contador">0</span> itens
-  <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
-  🗑️
-</button>
 
-</div>
-<button id="finalizar" onclick="finalizarCompra()">
-    Finalizar compra no WhatsApp
-</button>
-
+    <div id="carrinho">
+        🛒 Carrinho: <span id="contador">0</span> itens
+        <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">🗑️</button>
+    </div>
+    <button id="finalizar" onclick="finalizarCompra()">Finalizar compra no WhatsApp</button>
 </header>
 
 <section class="produtos">
 
-   <div class="produto">
-  <img src="duendedasorte.jpg" alt="Duende da Sorte">
-  <h3>Duende da Sorte</h3>
-  <p class="preco">R$ 149,90</p>
+    <!-- Duende da Sorte -->
+    <div class="produto">
+      <img src="duendedasorte.jpg" alt="Duende da Sorte">
+      <h3>Duende da Sorte</h3>
+      <p class="preco">R$ 149,90</p>
+      <button onclick="mostrarDescricao(this)">Ver detalhes</button>
 
-  <button onclick="mostrarDescricao(this)">Ver detalhes</button>
-
-  <div class="descricao">
-    <p>
-      🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.
-      <br><br>
-      Ideal para novos começos, mudanças e momentos importantes da vida.
-    </p>
-
-    <div class="magia"></div>
-
-    <button onclick="levarMagia(this, 'Duende da Sorte')">
-      Levar essa magia pra minha casa ✨
-    </button>
-  </div>
-</div>
-
-
-<div class="produto">
-  <img src="duendedoamor.jpg" alt="Duende do Amor">
-  <h3>Duende do Amor</h3>
-  <p class="preco">R$ 149,90</p>
-
-  <button onclick="mostrarDescricao(this)">Ver detalhes</button>
-
-  <div class="descricao">
-    <p>
-      ❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.
-      <br><br>
-      Perfeito para quem busca mais afeto, equilíbrio emocional e união.
-    </p>
-
-    <div class="magia"></div>
-
-    <button onclick="levarMagia(this, 'Duende do Amor')">
-      Levar essa magia pra minha casa ✨
-    </button>
-  </div>
-</div>
-
-
-<div class="produto">
-  <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
-  <h3>Duende Leprechaum</h3>
-  <p class="preco">R$ 280,90</p>
-
-  <button onclick="mostrarDescricao(this)">Ver detalhes</button>
-
-  <div class="descricao">
-    <p>
-      🌿 Guardião ancestral da prosperidade e proteção.
-      <br><br>
-      O Leprechaum afasta energias negativas e fortalece a abundância do lar.
-    </p>
-
-    <div class="magia"></div>
-
-    <button onclick="levarMagia(this, 'Duende Leprechaum')">
-      Levar essa magia pra minha casa ✨
-    </button>
-  </div>
-</div>
-
-
-<div class="produto">
-  <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
-
-    <h3>Duende da Prosperidade</h3>
-<p class="preco">R$ 199,90</p>
-
-<button onclick="mostrarDescricao(this)">Ver detalhes</button>
-
-
-  <div id="descricao" class="descricao">
-    <p>
-      ✨ Este duende tem a missão de atrair prosperidade, harmonia e boas
-      oportunidades para sua casa e sua família.
-      <br><br>
-      Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.
-    </p>
-
-    <div id="magia"></div>
-
-    <button onclick="levarMagia()">
-      Levar essa magia pra minha casa ✨
-    </button>
-  </div>
-</div>
-
-
-
-</section>
-<footer class="contato">
-    <h2>Entre em contato</h2>
-
-    <div class="botoes-contato">
-    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
-    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
+      <div class="descricao">
+        <p>🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.<br><br>Ideal para novos começos, mudanças e momentos importantes da vida.</p>
+        <div class="magia"></div>
+        <button onclick="levarMagia(this, 'Duende da Sorte')">Levar essa magia pra minha casa ✨</button>
+      </div>
     </div>
 
+    <!-- Duende do Amor -->
+    <div class="produto">
+      <img src="duendedoamor.jpg" alt="Duende do Amor">
+      <h3>Duende do Amor</h3>
+      <p class="preco">R$ 149,90</p>
+      <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+      <div class="descricao">
+        <p>❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.<br><br>Perfeito para quem busca mais afeto, equilíbrio emocional e união.</p>
+        <div class="magia"></div>
+        <button onclick="levarMagia(this, 'Duende do Amor')">Levar essa magia pra minha casa ✨</button>
+      </div>
+    </div>
+
+    <!-- Duende Leprechaum -->
+    <div class="produto">
+      <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
+      <h3>Duende Leprechaum</h3>
+      <p class="preco">R$ 280,90</p>
+      <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+      <div class="descricao">
+        <p>🌿 Guardião ancestral da prosperidade e proteção.<br><br>O Leprechaum afasta energias negativas e fortalece a abundância do lar.</p>
+        <div class="magia"></div>
+        <button onclick="levarMagia(this, 'Duende Leprechaum')">Levar essa magia pra minha casa ✨</button>
+      </div>
+    </div>
+
+    <!-- Duende da Prosperidade -->
+    <div class="produto">
+      <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
+      <h3>Duende da Prosperidade</h3>
+      <p class="preco">R$ 199,90</p>
+      <button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+      <div class="descricao">
+        <p>✨ Este duende tem a missão de atrair prosperidade, harmonia e boas oportunidades para sua casa e sua família.<br><br>Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.</p>
+        <div class="magia"></div>
+        <button onclick="levarMagia(this, 'Duende da Prosperidade')">Levar essa magia pra minha casa ✨</button>
+      </div>
+    </div>
+
+</section>
+
+<footer class="contato">
+    <h2>Entre em contato</h2>
+    <div class="botoes-contato">
+        <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
+        <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
+    </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Função para mostrar/esconder descrição
+  function mostrarDescricao(botao) {
+    const produto = botao.closest('.produto');
+    const descricao = produto.querySelector('.descricao');
+    descricao.style.display = descricao.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Função para levar magia
+  function levarMagia(botao, nomeProduto) {
+    const produto = botao.closest('.produto');
+
+    // Adiciona ao carrinho (simulação)
+    const contador = document.getElementById('contador');
+    contador.innerText = parseInt(contador.innerText) + 1;
+
+    // Toca som
+    const audio = new Audio('floresta.mp3');
+    audio.play();
+
+    // Alerta
+    alert(`✨ Magia do "${nomeProduto}" levada para sua casa! ✨`);
+
+    // Mostra estrelinhas
+    mostrarEstrelinhas(produto);
+  }
+
+  function mostrarEstrelinhas(produto) {
+    const magiaDiv = produto.querySelector('.magia');
+    magiaDiv.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+      const estrela = document.createElement('span');
+      estrela.innerText = '⭐';
+      magiaDiv.appendChild(estrela);
+    }
+  }
+
+  // Função de som ambiente
+  function toggleMusica() {
+    const musica = document.getElementById('musica');
+    if (musica.paused) {
+      musica.play();
+    } else {
+      musica.pause();
+    }
+  }
+
+  // Função de esvaziar carrinho
+  function esvaziarCarrinho() {
+    document.getElementById('contador').innerText = 0;
+  }
+
+  // Função de finalizar compra (simulação)
+  function finalizarCompra() {
+    const itens = document.getElementById('contador').innerText;
+    alert(`Você tem ${itens} itens no carrinho. Será redirecionado ao WhatsApp.`);
+    // Aqui você pode adicionar link real do WhatsApp
+  }
+</script>
+
 </body>
 </html>
-
-
-
