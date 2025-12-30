@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirna Duendes</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; }
-    .produtos { display: flex; flex-wrap: wrap; gap: 20px; }
-    .produto {
-      border: 1px solid #ccc;
-      padding: 10px;
-      width: 220px;
-      text-align: center;
-      position: relative;
-    }
-    .produto img { width: 150px; height: auto; }
-    .descricao { display: none; margin-top: 10px; border-top: 1px dashed #ccc; padding-top: 10px; }
-    .magia span { color: gold; font-size: 20px; margin: 0 2px; }
-    button { margin-top: 5px; padding: 5px 10px; cursor: pointer; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirna Duendes</title>
+<style>
+/* ===== RESET BÁSICO ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+body { font-size:16px; background: #f7f3ee; color: #2f1f14; }
+
+/* ===== HEADER ===== */
+header { text-align:center; padding: 50px 20px; position: relative; background: url("floresta.jpg") center/cover no-repeat; color: #fff; }
+header::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.25); z-index:0; }
+header * { position: relative; z-index:1; }
+header h1 { font-weight:900; text-shadow:0 3px 8px rgba(0,0,0,0.7), 0 0 15px rgba(212,175,55,0.8); }
+header p { margin-top:10px; font-weight:500; text-shadow:0 2px 5px rgba(0,0,0,0.8); }
+
+/* ===== BOTÃO SOM ===== */
+.som { position: fixed; bottom:16px; right:16px; font-size:22px; background:none; border:none; cursor:pointer; opacity:0.6; z-index:999; }
+.som:hover { opacity:1; }
+
+/* ===== CARRINHO ===== */
+#carrinho { display:inline-flex; align-items:center; gap:6px; background:#fff; padding:4px 10px; border-radius:999px; font-size:14px; line-height:1; box-shadow:0 4px 10px rgba(0,0,0,0.12); color:#1f3f36; }
+#carrinho #contador { font-weight:bold; margin:0 2px; }
+#carrinho button { background:none; border:none; cursor:pointer; font-size:18px; }
+#finalizar { margin-top:10px; padding:12px 20px; border:none; border-radius:25px; background:#ffdd57; color:#333; font-weight:bold; cursor:pointer; }
+#finalizar:hover { opacity:0.9; }
+
+/* ===== PRODUTOS ===== */
+.produtos { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:30px 15px; }
+.produto { background:white; border-radius:18px; padding:16px; box-shadow:0 6px 16px rgba(0,0,0,0.08); width:260px; text-align:center; }
+.produto img { width:100%; height:220px; object-fit:cover; border-radius:12px; }
+.produto h3 { margin:10px 0; }
+.preco { font-weight:bold; margin-bottom:10px; }
+.produto button { margin-top:8px; padding:12px; width:100%; border:none; border-radius:10px; background:#7a3df0; color:#fff; font-size:16px; cursor:pointer; }
+.produto button:hover { opacity:0.9; }
+
+/* ===== DESCRIÇÃO ===== */
+.descricao { max-height:0; overflow:hidden; margin-top:0; border-top:1px dashed #ccc; padding:0 0; text-align:left; font-size:14px; transition: max-height 0.4s ease, padding 0.4s ease, margin-top 0.4s ease; }
+.descricao.aberta { max-height:300px; margin-top:10px; padding:10px 0; }
+
+/* ===== MAGIA ===== */
+.magia { position: relative; height:40px; margin:10px 0; overflow:hidden; }
+.estrela { position:absolute; bottom:0; font-size:20px; animation: subir 1.2s ease-out forwards; }
+@keyframes subir { from {opacity:1; transform:translateY(0) scale(1);} to {opacity:0; transform:translateY(-40px) scale(1.5);} }
+
+/* ===== FOOTER ===== */
+footer { background:#fff; padding:20px; text-align:center; margin-top:30px; }
+footer h2 { margin-bottom:10px; }
+.botoes-contato a { display:inline-block; margin:5px 10px; padding:10px 15px; background:#7a3df0; color:#fff; text-decoration:none; border-radius:20px; }
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){ .produtos{flex-direction:column;align-items:center;} .produto{width:100%; max-width:320px;} .produto button{font-size:18px; padding:14px;} header h1{font-size:26px;} }
+</style>
 </head>
 <body>
 
@@ -27,80 +60,69 @@
 <audio id="musica" loop>
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
-<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">🔊</button>
+<button onclick="toggleMusica()" class="som">🔊</button>
 
 <header>
   <h1>Mirna Duendes</h1>
-  <div class="som-clima">
-    <p>✨ Clique aqui e entre no clima ✨</p>
-    <button onclick="toggleMusica()" class="som-btn">🔊 Som da floresta</button>
-  </div>
   <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
-
-  <div id="carrinho">
-    🛒 Carrinho: <span id="contador">0</span> itens
-    <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">🗑️</button>
-  </div>
+  <div id="carrinho">🛒 Carrinho: <span id="contador">0</span> itens <button onclick="esvaziarCarrinho()">🗑️</button></div>
   <button id="finalizar" onclick="finalizarCompra()">Finalizar compra no WhatsApp</button>
 </header>
 
 <section class="produtos">
 
-  <!-- Duende da Sorte -->
+  <!-- Exemplo de produto -->
   <div class="produto">
     <img src="duendedasorte.jpg" alt="Duende da Sorte">
     <h3>Duende da Sorte</h3>
     <p class="preco">R$ 149,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.<br><br>Ideal para novos começos, mudanças e momentos importantes da vida.</p>
+      <p>🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.<br>Ideal para novos começos, mudanças e momentos importantes.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende da Sorte')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this,'Duende da Sorte')">Levar essa magia pra minha casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende do Amor -->
   <div class="produto">
     <img src="duendedoamor.jpg" alt="Duende do Amor">
     <h3>Duende do Amor</h3>
     <p class="preco">R$ 149,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.<br><br>Perfeito para quem busca mais afeto, equilíbrio emocional e união.</p>
+      <p>❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende do Amor')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this,'Duende do Amor')">Levar essa magia pra minha casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende Leprechaum -->
   <div class="produto">
     <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
     <h3>Duende Leprechaum</h3>
     <p class="preco">R$ 280,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>🌿 Guardião ancestral da prosperidade e proteção.<br><br>O Leprechaum afasta energias negativas e fortalece a abundância do lar.</p>
+      <p>🌿 Guardião ancestral da prosperidade e proteção.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende Leprechaum')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this,'Duende Leprechaum')">Levar essa magia pra minha casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende da Prosperidade -->
   <div class="produto">
-    <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
+    <img src="duende-prosperidade.jpg" alt="Duende da Prosperidade">
     <h3>Duende da Prosperidade</h3>
     <p class="preco">R$ 199,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>✨ Este duende tem a missão de atrair prosperidade, harmonia e boas oportunidades para sua casa e sua família.<br><br>Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.</p>
+      <p>✨ Este duende tem a missão de atrair prosperidade, harmonia e boas oportunidades para sua casa e sua família.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende da Prosperidade')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this,'Duende da Prosperidade')">Levar essa magia pra minha casa ✨</button>
     </div>
   </div>
 
 </section>
 
-<footer class="contato">
+<footer>
   <h2>Entre em contato</h2>
   <div class="botoes-contato">
     <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
@@ -111,64 +133,59 @@
 <script>
 let contador = 0;
 
-// Mostrar/esconder descrição do produto clicado
-function mostrarDescricao(botao) {
+// Abrir/fechar descrição
+function mostrarDescricao(botao){
   const produto = botao.closest('.produto');
   const descricao = produto.querySelector('.descricao');
-  descricao.style.display = descricao.style.display === 'block' ? 'none' : 'block';
+
+  // fecha outros produtos abertos
+  document.querySelectorAll('.descricao.aberta').forEach(d=>{
+    if(d!==descricao) d.classList.remove('aberta');
+  });
+
+  descricao.classList.toggle('aberta');
 }
 
-// Levar magia: adiciona ao carrinho e mostra estrelinhas animadas
-function levarMagia(botao, nomeProduto) {
+// Adicionar magia, estrelinhas e carrinho
+function levarMagia(botao,nomeProduto){
   const produto = botao.closest('.produto');
-
-  // Atualiza carrinho
   contador++;
   document.getElementById('contador').innerText = contador;
 
-  // Mostra estrelinhas animadas
-  const magiaDiv = produto.querySelector('.magia');
-  magiaDiv.innerHTML = ''; // limpa antes
-  for (let i = 0; i < 5; i++) {
+  // Estrelinhas
+  const magia = produto.querySelector('.magia');
+  magia.innerHTML='';
+  for(let i=0;i<5;i++){
     const estrela = document.createElement('span');
-    estrela.innerText = '⭐';
-    estrela.style.opacity = 0;
-    estrela.style.transition = `opacity 0.5s ease ${i * 0.1}s`;
-    magiaDiv.appendChild(estrela);
-    setTimeout(() => { estrela.style.opacity = 1; }, 50);
+    estrela.innerText='⭐';
+    estrela.style.position='absolute';
+    estrela.style.bottom='0';
+    estrela.style.left=(20*i)+'%';
+    estrela.style.fontSize='20px';
+    estrela.style.opacity='0';
+    estrela.style.transition=`opacity 0.5s ease ${i*0.1}s, transform 1.2s ease`;
+    magia.appendChild(estrela);
+    setTimeout(()=>{estrela.style.opacity='1'; estrela.style.transform='translateY(-40px) scale(1.5)';},50);
+    setTimeout(()=>estrela.remove(),1200);
   }
 
-  // Som opcional
+  // Som ambiente opcional
   const audio = document.getElementById('musica');
-  if (audio.paused) audio.play();
+  if(audio.paused) audio.play();
 }
 
 // Carrinho
-function esvaziarCarrinho() {
-  contador = 0;
-  document.getElementById('contador').innerText = contador;
+function esvaziarCarrinho(){contador=0; document.getElementById('contador').innerText=contador;}
+function finalizarCompra(){
+  if(contador===0){alert("Seu carrinho está vazio 🛒"); return;}
+  const mensagem=`Olá! Gostaria de finalizar a compra de ${contador} produto(s) da Mirna Duendes ✨`;
+  const telefone="5548992126571";
+  const url=`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url,"_blank");
 }
 
-function finalizarCompra() {
-  if (contador === 0) {
-    alert("Seu carrinho está vazio 🛒");
-    return;
-  }
-  const mensagem = `Olá! Gostaria de finalizar a compra de ${contador} produto(s) da Mirna Duendes ✨`;
-  const telefone = "5548992126571";
-  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-  window.open(url, "_blank");
-}
-
-// Som ambiente
-function toggleMusica() {
-  const musica = document.getElementById('musica');
-  if (musica.paused) {
-    musica.play();
-  } else {
-    musica.pause();
-  }
-}
+// Som
+function toggleMusica(){ const musica=document.getElementById('musica'); if(musica.paused) musica.play(); else musica.pause();}
 </script>
 
 </body>
