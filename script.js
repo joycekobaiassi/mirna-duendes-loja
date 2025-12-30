@@ -1,20 +1,19 @@
 let contador = 0;
 
-// Mostrar/esconder descrição do produto clicado
+// Mostrar/esconder descrição do produto
 function mostrarDescricao(botao) {
   const produto = botao.closest('.produto');
   const descricao = produto.querySelector('.descricao');
 
-  // Fecha todas as outras descrições
+  // Fecha todas as outras
   document.querySelectorAll('.descricao.aberta').forEach(d => {
     if (d !== descricao) d.classList.remove('aberta');
   });
 
-  // Alterna a descrição clicada
   descricao.classList.toggle('aberta');
 }
 
-// Levar magia: adiciona ao carrinho e mostra estrelinhas animadas
+// Levar magia: adiciona ao carrinho e anima estrelinhas
 function levarMagia(botao, nomeProduto) {
   const produto = botao.closest('.produto');
 
@@ -22,33 +21,41 @@ function levarMagia(botao, nomeProduto) {
   contador++;
   document.getElementById('contador').innerText = contador;
 
-  // Alerta
-  alert(`✨ Magia do "${nomeProduto}" levada para sua casa! ✨`);
-
-  // Mostra estrelinhas animadas
+  // Mostra estrelinhas
   const magiaDiv = produto.querySelector('.magia');
   magiaDiv.innerHTML = '';
-  for (let i = 0; i < 5; i++) {
+  for (let i=0; i<5; i++) {
     const estrela = document.createElement('span');
     estrela.innerText = '⭐';
-    estrela.style.opacity = 0;
-    estrela.style.transition = `opacity 0.5s ease ${i*0.1}s`;
+    estrela.classList.add('estrela');
+    estrela.style.left = `${Math.random()*100}%`;
     magiaDiv.appendChild(estrela);
-    setTimeout(()=>{estrela.style.opacity = 1;}, 50);
   }
 
-  // Toca som ambiente se pausado
+  // Toca som
   const audio = document.getElementById('musica');
   if(audio.paused) audio.play();
+
+  alert(`✨ Magia do "${nomeProduto}" levada para sua casa! ✨`);
 }
 
-// Funções do carrinho
+// Carrinho
 function esvaziarCarrinho() {
-  contador = 0;
+  contador=0;
   document.getElementById('contador').innerText = contador;
 }
 
 function finalizarCompra() {
-  if(contador === 0){
-    alert("S
+  if(contador===0){ alert("Seu carrinho está vazio 🛒"); return; }
+  const telefone = "5548992126571";
+  const mensagem = `Olá! Gostaria de finalizar a compra de ${contador} produto(s) da Mirna Duendes ✨`;
+  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url,"_blank");
+}
 
+// Som ambiente
+function toggleMusica() {
+  const musica = document.getElementById('musica');
+  if(musica.paused) musica.play();
+  else musica.pause();
+}
