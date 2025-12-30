@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirna Duendes</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirna Duendes</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,84 +12,73 @@
 <audio id="musica" loop>
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
+<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">🔊</button>
 
 <header>
   <h1>Mirna Duendes</h1>
-  <div class="som-clima">
-    <p>✨ Clique aqui e entre no clima ✨</p>
-    <button onclick="toggleMusica()">🔊 Som da floresta</button>
-  </div>
-  <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
-
+  <p>✨ Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
   <div id="carrinho">
     🛒 Carrinho: <span id="contador">0</span> itens
-    <button onclick="esvaziarCarrinho()" title="Esvaziar carrinho">🗑️</button>
+    <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">🗑️</button>
   </div>
   <button id="finalizar" onclick="finalizarCompra()">Finalizar compra no WhatsApp</button>
 </header>
 
 <section class="produtos">
-
-  <!-- Duende da Sorte -->
+  <!-- Duendes -->
   <div class="produto">
     <img src="duendedasorte.jpg" alt="Duende da Sorte">
     <h3>Duende da Sorte</h3>
     <p class="preco">R$ 149,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.<br><br>Ideal para novos começos, mudanças e momentos importantes da vida.</p>
+      <p>🍀 O Duende da Sorte abre caminhos, atrai oportunidades e fortalece decisões.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende da Sorte')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this, 'Duende da Sorte')">Levar magia pra casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende do Amor -->
   <div class="produto">
     <img src="duendedoamor.jpg" alt="Duende do Amor">
     <h3>Duende do Amor</h3>
     <p class="preco">R$ 149,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.<br><br>Perfeito para quem busca mais afeto, equilíbrio emocional e união.</p>
+      <p>❤️ O Duende do Amor fortalece vínculos, harmonia e conexões verdadeiras.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende do Amor')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this, 'Duende do Amor')">Levar magia pra casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende Leprechaum -->
   <div class="produto">
     <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
     <h3>Duende Leprechaum</h3>
     <p class="preco">R$ 280,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>🌿 Guardião ancestral da prosperidade e proteção.<br><br>O Leprechaum afasta energias negativas e fortalece a abundância do lar.</p>
+      <p>🌿 Guardião ancestral da prosperidade e proteção.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende Leprechaum')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this, 'Duende Leprechaum')">Levar magia pra casa ✨</button>
     </div>
   </div>
 
-  <!-- Duende da Prosperidade -->
   <div class="produto">
     <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
     <h3>Duende da Prosperidade</h3>
     <p class="preco">R$ 199,90</p>
     <button onclick="mostrarDescricao(this)">Ver detalhes</button>
     <div class="descricao">
-      <p>✨ Este duende tem a missão de atrair prosperidade, harmonia e boas oportunidades para sua casa e sua família.<br><br>Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.</p>
+      <p>✨ Este duende atrai prosperidade, harmonia e boas oportunidades.</p>
       <div class="magia"></div>
-      <button onclick="levarMagia(this, 'Duende da Prosperidade')">Levar essa magia pra minha casa ✨</button>
+      <button onclick="levarMagia(this, 'Duende da Prosperidade')">Levar magia pra casa ✨</button>
     </div>
   </div>
-
 </section>
 
 <footer>
   <h2>Entre em contato</h2>
-  <div class="botoes-contato">
-    <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
-    <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
-  </div>
+  <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
+  <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
 </footer>
 
 <script src="script.js"></script>
