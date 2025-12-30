@@ -1,451 +1,89 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bege);
-  color: var(--marrom);
-  background-image: url("floresta.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #2f1f14;
-  font-size: 16px;
-}
-
-
-:root {
-  --verde: #2f5d50;
-  --verde-escuro: #1f3f36;
-  --dourado: #d4af37;
-  --bege: #f7f3ee;
-  --marrom: #4a3b2c;
-}
-
-/* ===== RESET BÁSICO ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ===== BODY ===== */
-body {
-  font-size: 16px;
-}
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+body { font-size:16px; background: #f7f3ee; color: #2f1f14; }
 
 /* ===== HEADER ===== */
 header {
+  text-align:center;
+  padding:50px 20px;
   position: relative;
-  background: url("floresta.jpg") center / cover no-repeat;
-  background: transparent;
-  text-align: center;
-  padding: 70px 20px;
+  background: url("floresta.jpg") center/cover no-repeat;
   color: #fff;
 }
-
 header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 60px 20px;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+  z-index:0;
 }
+header * { position: relative; z-index:1; }
+header h1 { font-weight:900; text-shadow:0 3px 8px rgba(0,0,0,0.7), 0 0 15px rgba(212,175,55,0.8); }
+header p { margin-top:10px; font-weight:500; text-shadow:0 2px 5px rgba(0,0,0,0.8); }
 
-header h1 {
-  font-weight: 800;
-  letter-spacing: 1px;
+/* ===== BOTÃO SOM ===== */
+.som {
+  position: fixed; bottom:16px; right:16px;
+  font-size:22px; background:none; border:none; cursor:pointer; opacity:0.6; z-index:999;
 }
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-}
-
-
-header p {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
+.som:hover { opacity:1; }
 
 /* ===== CARRINHO ===== */
 #carrinho {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  background: #fff;
-  padding: 4px 10px;
-  border-radius: 999px;
-
-  font-size: 14px;
-  line-height: 1;
-  white-space: nowrap;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  color: var(--verde-escuro);
+  display:inline-flex; align-items:center; gap:6px;
+  background:#fff; padding:4px 10px; border-radius:999px;
+  font-size:14px; line-height:1; box-shadow:0 4px 10px rgba(0,0,0,0.12); color:#1f3f36;
 }
-
-/* texto */
-#carrinho span {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-/* contador */
-#contador {
-  font-weight: bold;
-  margin: 0 2px;
-}
-
-/* lixeira */
-#carrinho .lixeira {
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-
-#carrinho button,
-#carrinho .lixeira {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-
-/* ===== BOTÃO FINALIZAR ===== */
+#carrinho #contador { font-weight:bold; margin:0 2px; }
+#carrinho button { background:none; border:none; cursor:pointer; font-size:18px; }
 #finalizar {
-  margin-top: 10px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #ffdd57;
-  color: #333;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+  margin-top:10px; padding:12px 20px; border:none; border-radius:25px;
+  background:#ffdd57; color:#333; font-weight:bold; cursor:pointer;
 }
-
-#finalizar:hover {
-  opacity: 0.9;
-}
+#finalizar:hover { opacity:0.9; }
 
 /* ===== PRODUTOS ===== */
-.produtos {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  padding: 30px 15px;
-}
-
-/* ===== CARD PRODUTO ===== */
+.produtos { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:30px 15px; }
 .produto {
-  background: white;
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-
-  width: 260px;
+  background:white; border-radius:18px; padding:16px; box-shadow:0 6px 16px rgba(0,0,0,0.08);
+  width:260px; text-align:center;
 }
-
-
-/* ===== IMAGEM ===== */
-.produto img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* ===== TÍTULO ===== */
-.produto h3 {
-  margin: 10px 0;
-}
-
-/* ===== PREÇO ===== */
-.preco {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* ===== BOTÕES ===== */
+.produto img { width:100%; height:220px; object-fit:cover; border-radius:12px; }
+.produto h3 { margin:10px 0; }
+.preco { font-weight:bold; margin-bottom:10px; }
 .produto button {
-  margin-top: 8px;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  background: #7a3df0;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+  margin-top:8px; padding:12px; width:100%; border:none; border-radius:10px;
+  background:#7a3df0; color:#fff; font-size:16px; cursor:pointer;
 }
-
-.produto button:hover {
-  opacity: 0.9;
-}
-
-.remover {
-  background: #e53935;
-}
+.produto button:hover { opacity:0.9; }
 
 /* ===== DESCRIÇÃO ===== */
 .descricao {
-  display: none;
-  margin-top: 10px;
-  font-size: 14px;
-  text-align: left;
+  max-height:0; overflow:hidden; margin-top:0; border-top:1px dashed #ccc;
+  padding:0 0; text-align:left; font-size:14px;
+  transition: max-height 0.4s ease, padding 0.4s ease, margin-top 0.4s ease;
+}
+.descricao.aberta {
+  max-height:300px; margin-top:10px; padding:10px 0;
 }
 
 /* ===== MAGIA ===== */
-#magia {
-  position: relative;
-  height: 40px;
-  margin: 10px 0;
-  overflow: hidden;
-}
-
-/* ===== ESTRELINHAS ===== */
-.estrela {
-  position: absolute;
-  bottom: 0;
-  font-size: 20px;
-  animation: subir 1.2s ease-out forwards;
-}
-
-@keyframes subir {
-  from {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-40px) scale(1.5);
-  }
-}
+.magia { position: relative; height:40px; margin:10px 0; overflow:hidden; }
+.estrela { position:absolute; bottom:0; font-size:20px; animation: subir 1.2s ease-out forwards; }
+@keyframes subir { from {opacity:1; transform:translateY(0) scale(1);} to {opacity:0; transform:translateY(-40px) scale(1.5);} }
 
 /* ===== FOOTER ===== */
-footer {
-  background: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 30px;
-}
-
-footer h2 {
-  margin-bottom: 10px;
-}
-
+footer { background:#fff; padding:20px; text-align:center; margin-top:30px; }
+footer h2 { margin-bottom:10px; }
 .botoes-contato a {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 15px;
-  background: #7a3df0;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 20px;
+  display:inline-block; margin:5px 10px; padding:10px 15px;
+  background:#7a3df0; color:#fff; text-decoration:none; border-radius:20px;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-  header h1 {
-    font-size: 26px;
-  }
-
-  .produtos {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 10px;
-  }
-
-  .produto {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .produto button {
-    font-size: 18px;
-    padding: 14px;
-  }
+/* ===== RESPONSIVO ===== */
+@media(max-width:768px){
+  .produtos{flex-direction:column;align-items:center;}
+  .produto{width:100%; max-width:320px;}
+  .produto button{font-size:18px; padding:14px;}
+  header h1{font-size:26px;}
 }
-.esvaziar {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-.esvaziar:hover {
-  background: rgba(255,255,255,0.2);
-}
-.lixeira {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  margin-left: 8px;
-  opacity: 0.7;
-}
-
-.lixeira:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-@media (min-width: 769px) {
-  .lixeira {
-    font-size: 24px;
-  }
-}
-.som {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  opacity: 0.6;
-}
-
-.som:hover {
-  opacity: 1;
-}
-.som {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  opacity: 0.6;
-  z-index: 999;
-}
-
-.som:hover {
-  opacity: 1;
-}
-.som-clima {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.som-clima p {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 6px;
-}
-
-.som-btn {
-  background: transparent;
-  border: 1px solid #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  opacity: 0.85;
-}
-
-.som-btn:hover {
-  opacity: 1;
-}
-
-.som-floresta {
-  margin: 10px 0;
-  font-size: 0.95rem;
-  color: var(--verde);
-  cursor: pointer;
-}
-
-.som-floresta span {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--dourado);
-}
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
-  .produto button {
-    font-size: 1rem;
-    padding: 12px;
-  }
-}
-Adicione:
-
-header * {
-  position: relative;
-  z-index: 1;
-}
-header h1,
-header p {
-  color: #fff;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,0.6),
-    0 0 12px rgba(122, 61, 240, 0.6);
-}
-header h1 {
-  color: #ffffff;
-  font-weight: 800;
-  text-shadow:
-    0 3px 8px rgba(0,0,0,0.7),
-    0 0 15px rgba(212,175,55,0.8);
-}
-
-header p,
-header span,
-header button {
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.4);
-}
-
-header h1 {
-  color: #ffffff;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,0.9),
-    0 0 12px rgba(255,255,255,0.4);
-}
-
-header p {
-  color: #fdfbf7;
-  font-weight: 500;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-}
-
-header button,
-header .som-btn,
-header .som-floresta {
-  color: #ffffff;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
-.descricao {
-  max-height: 0;            /* comece fechado */
-  overflow: hidden;         /* esconde conteúdo extra */
-  margin-top: 0;
-  border-top: 1px dashed #ccc;
-  padding: 0 0;
-  transition: max-height 0.4s ease, padding 0.4s ease, margin-top 0.4s ease;
-}
-
-.descricao.aberta {
-  max-height: 500px;        /* altura suficiente para o conteúdo */
-  margin-top: 10px;
-  padding: 10px 0;
-}
-
