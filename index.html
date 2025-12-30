@@ -10,6 +10,10 @@
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
 
+<button onclick="toggleMusica()" class="som" title="Ativar som ambiente">
+  🔊
+</button>
+
 <body>
 
 <header>
@@ -17,10 +21,11 @@
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
 
-    <h1 style="color: red; font-size: 60px; border: 3px solid red;">
-  Mirna Duendes
-</h1>
+<button onclick="toggleMusica()" class="som">
+  🔊
+</button>
 
+    <h1>Mirna Duendes</h1>
     <div class="som-clima">
   <p>✨ Clique aqui e entre no clima ✨</p>
   <button onclick="toggleMusica()" class="som-btn">
@@ -28,14 +33,7 @@
   </button>
 </div>
 
-<h1 style="color: red; font-size: 60px; border: 3px solid red;">
-  Mirna Duendes
-</h1>
-
-<p class="subtitulo-magico">
-  Artesanais • Energizados • Cheios de Magia ✨
-</p>
-
+    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
 <div id="carrinho">
     🛒 Carrinho: <span id="contador">0</span> itens
   <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
@@ -115,9 +113,4 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
 
