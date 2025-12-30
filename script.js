@@ -63,7 +63,14 @@ function mostrarDescricao(botao) {
   const produto = botao.closest('.produto');
   const descricao = produto.querySelector('.descricao');
 
-  // Alterna a classe 'aberta'
+  // Fecha outras descrições abertas
+  document.querySelectorAll('.descricao.aberta').forEach(d => {
+    if (d !== descricao) d.classList.remove('aberta');
+  });
+
+  // Alterna a descrição clicada
   descricao.classList.toggle('aberta');
 }
+
+
 
