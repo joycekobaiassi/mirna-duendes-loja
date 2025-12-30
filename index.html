@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirna Duendes TESTEEEEEEE</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirna Duendes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-<!-- SOM -->
 <audio id="musica" loop>
   <source src="floresta.mp3" type="audio/mpeg">
 </audio>
@@ -18,83 +14,99 @@
   🔊
 </button>
 
+<body>
+
 <header>
-  <h1>Mirna Duendes</h1>
+    <audio id="musica" loop>
+  <source src="floresta.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="som-clima">
-    <p>✨ Clique aqui e entre no clima ✨</p>
-    <button onclick="toggleMusica()" class="som-btn">
-      🔊 Som da floresta
-    </button>
-  </div>
-
-  <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
-
-  <div id="carrinho">
-    🛒 Carrinho: <span id="contador">0</span> itens
-    <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
-      🗑️
-    </button>
-  </div>
-
-  <button id="finalizar" onclick="finalizarCompra()">
-    Finalizar compra no WhatsApp
+    <h1>Mirna Duendes</h1>
+    <div class="som-clima">
+  <p>✨ Clique aqui e entre no clima ✨</p>
+  <button onclick="toggleMusica()" class="som-btn">
+    🔊 Som da floresta
   </button>
+</div>
+
+    <p>Duendes artesanais cheios de magia, proteção e boas energias ✨</p>
+<div id="carrinho">
+    🛒 Carrinho: <span id="contador">0</span> itens
+  <button onclick="esvaziarCarrinho()" class="lixeira" title="Esvaziar carrinho">
+  🗑️
+</button>
+
+</div>
+<button id="finalizar" onclick="finalizarCompra()">
+    Finalizar compra no WhatsApp
+</button>
+
 </header>
 
 <section class="produtos">
 
-  <div class="produto">
-    <img src="duendedasorte.jpg" alt="Duende da Sorte">
-    <h3>Duende da Sorte</h3>
-    <p class="preco">R$ 149,90</p>
-    <button onclick="comprarProduto(this, 'Duende da Sorte')">Comprar</button>
-  </div>
+    <div class="produto">
+        <img src="duendedasorte.jpg" alt="Duende da Sorte">
+        <h3>Duende da Sorte</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende da Sorte')">Comprar</button>
 
-  <div class="produto">
-    <img src="duendedoamor.jpg" alt="Duende do Amor">
-    <h3>Duende do Amor</h3>
-    <p class="preco">R$ 149,90</p>
-    <button onclick="comprarProduto(this, 'Duende do Amor')">Comprar</button>
-  </div>
 
-  <div class="produto">
+    </div>
+
+    <div class="produto">
+        <img src="duendedoamor.jpg" alt="Duende do Amor">
+        <h3>Duende do Amor</h3>
+        <p class="preco">R$ 149,90</p>
+        <button onclick="comprarProduto(this, 'Duende do Amor')">Comprar</button>
+
+    </div>
+<div class="produto">
     <img src="duendeleprechaum.jpg" alt="Duende Leprechaum">
     <h3>Duende Leprechaum</h3>
     <p class="preco">R$ 149,90</p>
+    <p class="preco">R$ 280,90</p>
     <button onclick="comprarProduto(this, 'Duende Leprechaum')">Comprar</button>
+
+</div>
+
+<div class="produto">
+  <img src="img/duende-prosperidade.jpg" alt="Duende da Prosperidade">
+
+  <h3>Duende da Prosperidade</h3>
+
+<button onclick="mostrarDescricao(this)">Ver detalhes</button>
+
+
+  <div id="descricao" class="descricao">
+    <p>
+      ✨ Este duende tem a missão de atrair prosperidade, harmonia e boas
+      oportunidades para sua casa e sua família.
+      <br><br>
+      Se ele te escolheu, coloque-o no seu lar e sinta a energia se transformar.
+    </p>
+
+    <div id="magia"></div>
+
+    <button onclick="levarMagia()">
+      Levar essa magia pra minha casa ✨
+    </button>
   </div>
+</div>
 
-  <div class="produto">
-    <img src="duendedasorte.jpg" alt="Duende da Prosperidade">
-    <h3>Duende da Prosperidade</h3>
-    <button onclick="mostrarDescricao(this)">Ver detalhes</button>
 
-    <div class="descricao">
-      <p>
-        ✨ Este duende tem a missão de atrair prosperidade, harmonia e boas
-        oportunidades para sua casa e sua família.
-      </p>
-
-      <div class="magia"></div>
-
-      <button onclick="levarMagia()">
-        Levar essa magia pra minha casa ✨
-      </button>
-    </div>
-  </div>
 
 </section>
-
 <footer class="contato">
-  <h2>Entre em contato</h2>
-  <div class="botoes-contato">
+    <h2>Entre em contato</h2>
+
+    <div class="botoes-contato">
     <a href="https://wa.me/5548992126571" target="_blank">📱 WhatsApp</a>
     <a href="https://instagram.com/mirnaduendes" target="_blank">📸 Instagram</a>
-  </div>
+    </div>
+
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
